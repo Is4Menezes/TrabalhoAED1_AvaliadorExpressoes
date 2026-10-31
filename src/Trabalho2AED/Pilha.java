@@ -26,4 +26,15 @@ public class Pilha<T> {
 			tam++;
 		}
 	}
+	
+	public T pop () throws Exception {
+		if(topo == null)
+			throw new Exception ("Erro: A pilha está vazia");
+		else {
+			T item = topo.item;
+			topo =topo.prox;
+			tam--;
+			return item;
+		}
+	}
 }
