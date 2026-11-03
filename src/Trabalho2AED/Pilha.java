@@ -1,12 +1,7 @@
 package Trabalho2AED;
 
 public class Pilha<T> {
-	private class Celula {
-		T item;
-		Celula prox;
-	}
-	
-	private Celula topo;
+	private Celula<T> topo;
 	private int tam;
 	
 	public Pilha() {
@@ -19,7 +14,7 @@ public class Pilha<T> {
 			throw new NullPointerException();
 		}
 		else {
-			Celula novo = new Celula();
+			Celula novo = new Celula(item);
 			novo.item = item;
 			novo.prox = topo;
 			topo = novo;
