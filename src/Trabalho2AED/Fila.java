@@ -11,4 +11,15 @@ public class Fila <T> {
 		tam = 0;
 	}
 	
+	public void Enfileirar(T item){
+		if(item == null)
+			throw new NullPointerException("Não é permitido empilhar item nulo");
+		else {
+			fim.prox = new Celula<>(item);
+			fim = fim.prox;
+			tam++;
+		}
+	}
+	
+	
 }
