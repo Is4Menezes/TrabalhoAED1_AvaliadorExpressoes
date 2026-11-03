@@ -9,7 +9,7 @@ public class Pilha<T> {
 		tam = 0;
 	}
 	
-	public void push(T item) {
+	public void push(T item) {  // empilhar : adiciona um novo elemento no topo da pilha 
 		if(item == null) {
 			throw new NullPointerException("Não é permitido empilhar item nulo");
 		}
@@ -21,7 +21,7 @@ public class Pilha<T> {
 		}
 	}
 	
-	public T pop () throws Exception {
+	public T pop () throws Exception { //desempilhar : Remove o último elemento inserido
 		if(topo == null)
 			throw new Exception ("Erro: A pilha está vazia");
 		else {
@@ -32,7 +32,7 @@ public class Pilha<T> {
 		}
 	}
 	
-	public T peek() throws Exception {
+	public T peek() throws Exception { //Serve para vizualizar o elemento do topo da pilha
 		if(topo == null)
 			throw new Exception ("Erro: A pilha está vazia");
 		else {
