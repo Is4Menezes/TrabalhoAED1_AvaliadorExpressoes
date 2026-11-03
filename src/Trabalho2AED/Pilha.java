@@ -11,11 +11,10 @@ public class Pilha<T> {
 	
 	public void push(T item) {
 		if(item == null) {
-			throw new NullPointerException();
+			throw new NullPointerException("Não é permitido empilhar item nulo");
 		}
 		else {
-			Celula novo = new Celula(item);
-			novo.item = item;
+			Celula <T> novo = new Celula<>(item);
 			novo.prox = topo;
 			topo = novo;
 			tam++;
@@ -30,6 +29,14 @@ public class Pilha<T> {
 			topo =topo.prox;
 			tam--;
 			return item;
+		}
+	}
+	
+	public T peek() throws Exception {
+		if(topo == null)
+			throw new Exception ("Erro: A pilha está vazia");
+		else {
+			return topo.item;
 		}
 	}
 }
