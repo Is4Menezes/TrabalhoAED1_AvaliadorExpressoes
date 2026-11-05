@@ -21,22 +21,26 @@ public class Pilha<T> {
 		}
 	}
 	
-	public T pop () throws Exception { //desempilhar : Remove o último elemento inserido
+	public T pop () throws RuntimeException { //desempilhar : Remove o último elemento inserido
 		if(topo == null)
-			throw new Exception ("Erro: A pilha está vazia");
+			throw new RuntimeException ("Erro: A pilha está vazia");
 		else {
 			T item = topo.item;
-			topo =topo.prox;
+			topo = topo.prox;
 			tam--;
 			return item;
 		}
 	}
 	
-	public T peek() throws Exception { //Serve para vizualizar o elemento do topo da pilha
+	public T peek() throws RuntimeException { //Serve para vizualizar o elemento do topo da pilha
 		if(topo == null)
-			throw new Exception ("Erro: A pilha está vazia");
+			throw new RuntimeException ("Erro: A pilha está vazia");
 		else {
 			return topo.item;
 		}
+	}
+	
+	public boolean isVazia() {
+		return topo == null;
 	}
 }
