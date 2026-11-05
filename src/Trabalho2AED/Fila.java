@@ -21,8 +21,10 @@ public class Fila <T> {
 		}
 	}
 	
-	public T desenfileirar()throws Exception {
+	public T desenfileirar() throws Exception {
 		if (inicio == fim)
 			 throw new Exception("Erro: Fila vazia!");
+		else
+			return null;
 	}
 }
