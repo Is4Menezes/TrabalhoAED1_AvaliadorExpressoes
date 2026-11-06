@@ -21,7 +21,7 @@ public class Pilha<T> {
 		}
 	}
 	
-	public T pop () throws Exception { //desempilhar : Remove o último elemento inserido
+	public T pop () throws Exception { // desempilhar : Remove o último elemento inserido
 		if(topo == null)
 			throw new Exception ("Erro: A pilha está vazia");
 		else {
@@ -32,7 +32,7 @@ public class Pilha<T> {
 		}
 	}
 	
-	public T peek() throws Exception { //Serve para vizualizar o elemento do topo da pilha
+	public T peek() throws Exception { // Serve para vizualizar o elemento do topo da pilha
 		if(topo == null)
 			throw new Exception ("Erro: A pilha está vazia");
 		else {
