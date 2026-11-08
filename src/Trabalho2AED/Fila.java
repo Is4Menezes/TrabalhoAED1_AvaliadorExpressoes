@@ -21,14 +21,29 @@ public class Fila <T> {
 		}
 	}
 	
-	public T desenfileirar()throws Exception {
+	public T desenfileirar()throws RuntimeException {
 		if (inicio == fim)
-			 throw new Exception("Erro: Fila vazia!");
+			 throw new RuntimeException("Erro: Fila vazia!");
 		else {
 			T aux = inicio.prox.item;
 			inicio = inicio.prox;
 			tam--;
 			return aux;
 		}
+	}
+	
+	public boolean isVazia() {
+		if(inicio == fim)
+			return true;
+		return false;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		while(!isVazia()) {
+			sb.append(desenfileirar());
+		}
+		return sb.toString();
 	}
 }
