@@ -37,12 +37,14 @@ public class Fila <T> {
 			return true;
 		return false;
 	}
-	
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		while(!isVazia()) {
-			sb.append(desenfileirar());
+		Celula<T> atual = inicio.prox; // pula a sentinela
+		while (atual != null) {
+			sb.append(atual.item);
+			atual = atual.prox;
 		}
 		return sb.toString();
 	}
