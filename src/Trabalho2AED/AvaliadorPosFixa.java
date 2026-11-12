@@ -29,18 +29,8 @@ public class AvaliadorPosFixa {
             }
             return a / b;
         }else if(operador == '^'){
-            return potencia(a,(int) b);
+            return Math.pow(a, b);
         }
         throw new IllegalArgumentException("Operador inválido: " + operador);
-    }
-
-    private double potencia(double base, int exponencial) {
-        if(exponencial < 0){
-            throw new ArithmeticException("Expoente negativo");
-        }
-        if(exponencial == 0) {
-            return 1;
-        }
-        return base * potencia(base,exponencial - 1);
     }
 }
